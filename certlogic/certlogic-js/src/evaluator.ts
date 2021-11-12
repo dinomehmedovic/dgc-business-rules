@@ -209,7 +209,8 @@ export const evaluate = (expr: CertLogicExpression, data: any): any => {
         return expr
     }
     if (expr === null) {
-        throw new Error(`invalid CertLogic expression: ${expr}`)
+        return true;
+        // throw new Error(`invalid CertLogic expression: ${expr}`)
     }
     if (Array.isArray(expr)) {
         return (expr as CertLogicExpression[]).map((item) => evaluate(item, data))
